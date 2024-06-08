@@ -38,9 +38,9 @@ function ChatBox(props) {
   };
 
   return (
-    <div className="bg-black w-full  m-auto flex flex-col h-screen justify-end ">
+    <div className="bg-black w-full  m-auto flex flex-col h-screen  ">
       <div
-        className="chatSection overflow-y-auto"
+        className="chatSection overflow-y-auto hide-scrollbar"
         ref={chatSectionRef}
         style={{ maxHeight: "80vh" }}
       >
