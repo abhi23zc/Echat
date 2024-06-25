@@ -39,7 +39,7 @@ function ChatBox(props) {
   };
 
   return (
-    <div className="bg-black w-full  m-auto flex flex-col lg:h-[90vh] justify-end hide-scrollbar">
+    <div className="bg-black w-full  m-auto flex flex-col h-[90vh] justify-end hide-scrollbar">
       <div
         className="chatSection overflow-y-auto hide-scrollbar"
         ref={chatSectionRef}
@@ -51,20 +51,24 @@ function ChatBox(props) {
             <div key={e.id} className="w-full">
               <div className="flex flex-col p-5 w-full ">
                 <div className="bg-gray-800 lg:w-fit rounded-md p-3  ">
-                  <div className="flex flex-col ">
+                  <div className="flex flex-col overflow-x-auto">
                     <div className="flex items-center w-fit">
                       <img className="w-5 " src="/zen.png" alt="icon" />
                       <h1 className="text-gray-300 text-xs m-2">{e.name}</h1>
-                    </div>
-                    <div className="flex flex-row-reverse  mt-2 w-fit " >
-                      <div className="chat-button w-fit  p-1">
-                        <CopyIcon 
+
+                      <CopyIcon 
                           onClick={() => {
                             navigator.clipboard.writeText(e.msg);
                           }}
                           className="w-4 cursor-pointer ml-5 hover:text-gray-300 text-white "
                         />
-                      </div>
+
+                      {/* <div className="chat-button w-fit  p-1">
+                       
+                      </div> */}
+                    </div>
+                    <div className="flex flex-row-reverse  mt-2 w-fit" >
+                    
                       <div>
                         <pre className=" text-white leading-loose break-words text-base whitespace-pre-wrap">
                           {e.msg}

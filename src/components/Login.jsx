@@ -58,11 +58,15 @@ function Login(props) {
                 </div>
                 <div class="mt-12">
                   <button
+                  onSubmit={()=>{
+                    localStorage.setItem("chatdata", JSON.stringify({name:name, chatid:chatid}))
+                    setlogin(false)
+                  }}
                   onClick={()=>{
                     localStorage.setItem("chatdata", JSON.stringify({name:name, chatid:chatid}))
                     setlogin(false)
                 }}
-                    type="button"
+                    type="submit"
                     class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
                   >
                     Login
