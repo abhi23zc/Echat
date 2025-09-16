@@ -59,6 +59,7 @@ function ChatBox(props) {
                       <CopyIcon 
                           onClick={() => {
                             navigator.clipboard.writeText(e.msg);
+                            alert("Copied")
                           }}
                           className="w-4 cursor-pointer ml-5 hover:text-gray-300 text-white "
                         />
